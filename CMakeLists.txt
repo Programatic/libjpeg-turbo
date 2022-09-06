@@ -606,10 +606,10 @@ if(WITH_TURBOJPEG)
       set(TJMAPFILE ${CMAKE_CURRENT_SOURCE_DIR}/turbojpeg-mapfile.jni)
     endif()
     if(MSVC)
-      configure_file(${CMAKE_SOURCE_DIR}/win/turbojpeg.rc.in
-        ${CMAKE_BINARY_DIR}/win/turbojpeg.rc)
+      configure_file(${CMAKE_CURRENT_SOURCE_DIR}/win/turbojpeg.rc.in
+        ${CMAKE_CURRENT_BINARY_DIR}/win/turbojpeg.rc)
       set(TURBOJPEG_SOURCES ${TURBOJPEG_SOURCES}
-        ${CMAKE_BINARY_DIR}/win/turbojpeg.rc)
+        ${CMAKE_CURRENT_BINARY_DIR}/win/turbojpeg.rc)
     endif()
     add_library(turbojpeg SHARED ${TURBOJPEG_SOURCES})
     set_property(TARGET turbojpeg PROPERTY COMPILE_FLAGS
